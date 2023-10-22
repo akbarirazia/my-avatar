@@ -7,21 +7,20 @@ import {
 import React, { useRef, useState, useEffect } from "react"
 import { Avatar } from "./Avatar"
 import { DirectionalLight } from "three"
+import { useControls } from "leva"
 
 function Experience() {
-  // useEffect(() => {
-  //   console.log(avatar.positionY)
-  // }, [avatar.position])
-  const avatarRef = useRef(null)
-
-  useEffect(() => {
-    console.log(avatarRef.current.position)
-  }, [])
+  const { animation } = useControls({
+    animation: {
+      value: "walk",
+      options: ["walk", "stand", "look"],
+    },
+  })
 
   return (
     <>
       <OrbitControls zoomSpeed={1} />
-      <group position={[0, -1.5, 0]} rotation={[0, -0.8, 0]} ref={avatarRef}>
+      <group position={[0, -1, 0]}>
         <directionalLight
           // ref={directionalLightRef}
           color="blue"
@@ -31,7 +30,7 @@ function Experience() {
         />
         <Sky />
         <Environment preset="sunset" />
-        <Avatar />
+        <Avatar animation={animation} />
         <directionalLight
           // ref={directionalLightRef}
           color="white"
