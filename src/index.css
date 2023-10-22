@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#root {
+  /* width: 100vw; */
+  height: 100vh;
+  background-color: black;
+  /* background-image: linear-gradient(0deg, #d9afd9 0%, #000000 100%); */
+}
+/* h1 {
+  height: 100vh;
+} */
