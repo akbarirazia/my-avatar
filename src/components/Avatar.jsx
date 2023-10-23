@@ -20,19 +20,26 @@ export function Avatar(props) {
   const { animations: lookingAnimation } = useFBX(
     "animation/NervouslyLookAround.fbx"
   )
+  const { animations: wavingAnimation } = useFBX("animation/Waving.fbx")
   walkingAnimation[0].name = "walk"
   standingAnimation[0].name = "stand"
   lookingAnimation[0].name = "look"
+  wavingAnimation[0].name = "wave"
 
   const { actions } = useAnimations(
-    [walkingAnimation[0], standingAnimation[0], lookingAnimation[0]],
+    [
+      walkingAnimation[0],
+      standingAnimation[0],
+      lookingAnimation[0],
+      wavingAnimation[0],
+    ],
     group
   )
 
   useEffect(() => {
-    actions[animation].reset().fadeIn(0.2).play()
+    actions[animation].reset().fadeIn(0.09).play()
     return () => {
-      actions[animation].reset().fadeOut(0.2)
+      actions[animation].reset().fadeOut(0.09)
     }
   }, [animation])
   useFrame((state) => {

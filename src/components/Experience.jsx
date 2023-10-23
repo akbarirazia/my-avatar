@@ -12,8 +12,8 @@ import { useControls } from "leva"
 function Experience() {
   const { animation } = useControls({
     animation: {
-      value: "walk",
-      options: ["walk", "stand", "look"],
+      value: "wave",
+      options: ["wave", "walk", "stand", "look"],
     },
   })
 
