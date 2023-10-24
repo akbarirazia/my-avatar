@@ -23,7 +23,7 @@ function Experience() {
       <group position={[0, -1, 0]}>
         <directionalLight
           // ref={directionalLightRef}
-          color="blue"
+          color="white"
           intensity={1}
           position={[-5, -1, 0]}
           castShadow
